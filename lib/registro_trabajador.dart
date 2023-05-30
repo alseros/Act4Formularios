@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class MiFormulario2 extends StatefulWidget {
-  const MiFormulario2({super.key});
+class FormularioTrabajador extends StatefulWidget {
+  const FormularioTrabajador({super.key});
 
   @override
-  MiFormProductos2 createState() {
-    return MiFormProductos2();
+  MiFormProductos3 createState() {
+    return MiFormProductos3();
   }
 }
 
-class MiFormProductos2 extends State<MiFormulario2> {
+class MiFormProductos3 extends State<FormularioTrabajador> {
   final _formKey = GlobalKey<FormState>();
 
   @override
@@ -21,7 +21,7 @@ class MiFormProductos2 extends State<MiFormulario2> {
         children: [
           TextFormField(
             decoration: const InputDecoration(
-                hintText: "Ingrese su ID",
+                hintText: "Ingrese su ID del trabajador",
                 labelText: "ID",
                 prefixIcon: Icon(
                   Icons.verified_user_outlined,
@@ -39,100 +39,119 @@ class MiFormProductos2 extends State<MiFormulario2> {
           ),
           TextFormField(
             decoration: const InputDecoration(
-                hintText: "Ingrese su marca",
-                labelText: "Marca",
+                hintText: "Ingrese su nombre",
+                labelText: "Nombre",
                 prefixIcon: Icon(
-                  Icons.branding_watermark,
+                  Icons.account_box_rounded,
                   color: Color(0xff2f1913),
                 )),
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Por favor, ingrese correctamente su marca.';
+                return 'Por favor, ingrese correctamente su nombre.';
               } else if (!RegExp(r"[a-zA-Z ]+|\s").hasMatch(value)) {
-                return "Por favor, introduce una marca valida";
+                return "Por favor, introduce un nombre valido";
               }
               return null;
             },
           ),
           TextFormField(
             decoration: const InputDecoration(
-                hintText: "Ingrese su asietno",
-                labelText: "Asiento",
+                hintText: "Ingrese su Apellido Paterno",
+                labelText: "Apellido Paterno",
                 prefixIcon: Icon(
-                  Icons.chair,
+                  Icons.account_box_rounded,
                   color: Color(0xff2f1913),
                 )),
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Por favor, ingrese su asiento.';
+                return 'Por favor, ingrese su apellido paterno.';
               } else if (!RegExp(r"[a-zA-Z ]+|\s").hasMatch(value)) {
-                return "Por favor, introduce un asiento valido";
+                return "Por favor, introduce un apellido paterno valido";
               }
               return null;
             },
           ),
           TextFormField(
             decoration: const InputDecoration(
-                hintText: "Ingrese sus puertas",
-                labelText: "Puertas",
+                hintText: "Ingrese su Apellido Materno",
+                labelText: "Apellido Materno",
                 prefixIcon: Icon(
-                  Icons.door_sliding,
+                  Icons.account_box_rounded,
                   color: Color(0xff2f1913),
                 )),
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Por favor, ingrese sus puertas.';
-              } else if (!RegExp(r'[0-9]+[,.]{0,1}[0-9]*').hasMatch(value)) {
-                return "Por favor, introduce las puertas validas";
+                return 'Por favor, ingrese su apellido materno.';
+              } else if (!RegExp(r"[a-zA-Z ]+|\s").hasMatch(value)) {
+                return "Por favor, introduce un apellido materno valido";
               }
               return null;
             },
           ),
           TextFormField(
             decoration: const InputDecoration(
-                hintText: "Ingrese su modelo",
-                labelText: "Modelo",
+                hintText: "Ingrese su puesto",
+                labelText: "Puesto",
                 prefixIcon: Icon(
-                  Icons.model_training,
+                  Icons.group,
                   color: Color(0xff2f1913),
                 )),
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Por favor, ingrese su modelo.';
+                return 'Por favor, ingrese su puesto.';
+              } else if (!RegExp(r"[a-zA-Z ]+|\s").hasMatch(value)) {
+                return "Por favor, introduce un puesto valido";
+              }
+              return null;
+            },
+          ),
+          TextFormField(
+            decoration: const InputDecoration(
+                hintText: "Ingrese su correo",
+                labelText: "Correo",
+                prefixIcon: Icon(
+                  Icons.email,
+                  color: Color(0xff2f1913),
+                )),
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Por favor, ingrese su correo.';
               } else if (!RegExp(r'\S+@\S+\.\S+').hasMatch(value)) {
-                return "Por favor, ingrese un modelo valido.";
+                return "Por favor, ingrese un correo valido.";
               }
               return null;
             },
           ),
           TextFormField(
             decoration: const InputDecoration(
-                hintText: "Ingrese su ventanas",
-                labelText: "Ventanas",
+                hintText: "Ingrese su teléfono",
+                labelText: "Teléfono",
                 prefixIcon: Icon(
-                  Icons.window,
+                  Icons.call,
                   color: Color(0xff2f1913),
                 )),
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Por favor, ingrese sus ventanas.';
-              }
-              return null;
-            },
-          ),
-          TextFormField(
-            decoration: const InputDecoration(
-                hintText: "Ingrese su tamaño",
-                labelText: "Tamaño",
-                prefixIcon: Icon(
-                  Icons.height,
-                  color: Color(0xff2f1913),
-                )),
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Por favor, ingrese su tamaño.';
+                return 'Por favor, ingrese su teléfono.';
               } else if (!RegExp(r'[0-9]+[,.]{0,1}[0-9]*').hasMatch(value)) {
-                return "Por favor introduce un tamaño valido";
+                return "Por favor introduce un teléfono valido";
+              }
+              return null;
+            },
+          ),
+          TextFormField(
+            decoration: const InputDecoration(
+                hintText: "Ingrese su contraseña",
+                labelText: "Contraseña",
+                prefixIcon: Icon(
+                  Icons.password_outlined,
+                  color: Color(0xff2f1913),
+                )),
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Por favor, ingrese su contraseña.';
+              } else if (!RegExp(r"[a-zA-Z ]+|\s").hasMatch(value)) {
+                return "Por favor, ingrese una contraseña valida.";
               }
               return null;
             },
@@ -162,7 +181,7 @@ class MiFormProductos2 extends State<MiFormulario2> {
               },
               style: TextButton.styleFrom(
                   foregroundColor: const Color(0xfff2f2f2),
-                  backgroundColor: const Color(0xffc1b755)),
+                  backgroundColor: const Color(0xff045340)),
               child: const Text(
                 "Enviar",
                 style: TextStyle(fontSize: 20),

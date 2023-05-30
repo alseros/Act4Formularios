@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class MiFormulario4 extends StatefulWidget {
-  const MiFormulario4({super.key});
+class FormularioTarjeta extends StatefulWidget {
+  const FormularioTarjeta({super.key});
 
   @override
   MiFormProductos4 createState() {
@@ -9,7 +9,7 @@ class MiFormulario4 extends StatefulWidget {
   }
 }
 
-class MiFormProductos4 extends State<MiFormulario4> {
+class MiFormProductos4 extends State<FormularioTarjeta> {
   final _formKey = GlobalKey<FormState>();
 
   @override
@@ -21,116 +21,103 @@ class MiFormProductos4 extends State<MiFormulario4> {
         children: [
           TextFormField(
             decoration: const InputDecoration(
-                hintText: "Ingrese el ID",
-                labelText: "ID",
+                hintText: "Ingrese el numero de la tarjeta",
+                labelText: "Numero de la tarjeta",
                 prefixIcon: Icon(
-                  Icons.verified_user_outlined,
+                  Icons.credit_card,
                   color: Color(0xff2f1913),
                 )),
             // The validator receives the text that the user has entered.
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Por favor, escriba el ID';
+                return 'Por favor, escriba el numero de la tarjeta';
               } else if (!RegExp(r'[0-9]+[,.]{0,1}[0-9]*').hasMatch(value)) {
-                return "Por favor introduce un ID valido";
+                return "Por favor introduce un numero de la tarjeta valido";
               }
               return null;
             },
           ),
           TextFormField(
             decoration: const InputDecoration(
-                hintText: "Ingrese su id empleado",
-                labelText: "ID empleado",
+                hintText: "Ingrese el mes de vencimiento (12)",
+                labelText: "Mes de vencimiento",
                 prefixIcon: Icon(
-                  Icons.verified,
+                  Icons.credit_card,
                   color: Color(0xff2f1913),
                 )),
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Por favor, ingrese correctamente el id epmleado';
+                return 'Por favor, ingrese correctamente el mes de vencimiento';
               } else if (!RegExp(r'[0-9]+[,.]{0,1}[0-9]*').hasMatch(value)) {
-                return "Por favor, introduce un id valido";
+                return "Por favor, introduce un mes de vencimiento valido";
               }
               return null;
             },
           ),
           TextFormField(
             decoration: const InputDecoration(
-                hintText: "Ingrese su id camion",
-                labelText: "ID camion",
+                hintText: "Ingrese el año de vencimiento (2024)",
+                labelText: "Año de vencimiento",
                 prefixIcon: Icon(
-                  Icons.verified,
+                  Icons.credit_card,
                   color: Color(0xff2f1913),
                 )),
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Por favor, ingrese id camion';
+                return 'Por favor, ingrese el año de vencimiento';
               } else if (!RegExp(r'[0-9]+[,.]{0,1}[0-9]*').hasMatch(value)) {
-                return "Por favor, introduce un id valido";
+                return "Por favor, introduce un año de vencimiento valido";
               }
               return null;
             },
           ),
           TextFormField(
             decoration: const InputDecoration(
-                hintText: "Ingrese su destino",
-                labelText: "Destino",
+                hintText: "Ingrese el titular de la tarjeta",
+                labelText: "Titular de la tarjeta",
                 prefixIcon: Icon(
-                  Icons.description,
+                  Icons.account_box,
                   color: Color(0xff2f1913),
                 )),
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Por favor, ingrese su destino';
-              } else if (!RegExp(r'[0-9]+[,.]{0,1}[0-9]*').hasMatch(value)) {
-                return "Por favor, introduce un destino valido";
-              }
-              return null;
-            },
-          ),
-          TextFormField(
-            decoration: const InputDecoration(
-                hintText: "Ingrese su Asiento",
-                labelText: "Asiento",
-                prefixIcon: Icon(
-                  Icons.chair,
-                  color: Color(0xff2f1913),
-                )),
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Por favor, ingrese su asuento.';
+                return 'Por favor, ingrese el titular de la tarjeta';
               } else if (!RegExp(r"[a-zA-Z ]+|\s").hasMatch(value)) {
-                return "Por favor, introduce un asiento valido";
+                return "Por favor, introduce un titular de la tarjeta valido";
               }
               return null;
             },
           ),
           TextFormField(
             decoration: const InputDecoration(
-                hintText: "Ingrese su fecha",
-                labelText: "Fecha",
+                hintText: "Ingrese el cvv",
+                labelText: "CVV",
                 prefixIcon: Icon(
-                  Icons.insert_invitation_outlined,
+                  Icons.credit_card,
                   color: Color(0xff2f1913),
                 )),
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Por favor, ingrese la fecha.';
+                return 'Por favor, ingrese el cvv.';
+              } else if (!RegExp(r'[0-9]+[,.]{0,1}[0-9]*').hasMatch(value)) {
+                return "Por favor, introduce un cvv valido";
               }
               return null;
             },
           ),
           TextFormField(
             decoration: const InputDecoration(
-                hintText: "Ingrese su fecha de salida",
-                labelText: "Salida",
+                hintText: "Ingrese si es Debito o credito",
+                labelText: "Debito o credito",
                 prefixIcon: Icon(
-                  Icons.insert_invitation_outlined,
+                  Icons.credit_card,
                   color: Color(0xff2f1913),
                 )),
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Por favor, ingrese su fecha de salida.';
+                return 'Por favor, ingrese si es debito o credito';
+              } else if (!RegExp(r"[a-zA-Z ]+|\s").hasMatch(value)) {
+                return "Por favor, introduce si es debito o credito valido";
               }
               return null;
             },
@@ -160,7 +147,7 @@ class MiFormProductos4 extends State<MiFormulario4> {
               },
               style: TextButton.styleFrom(
                   foregroundColor: const Color(0xfff2f2f2),
-                  backgroundColor: const Color(0xffc1b755)),
+                  backgroundColor: const Color(0xff045340)),
               child: const Text(
                 "Enviar",
                 style: TextStyle(fontSize: 20),

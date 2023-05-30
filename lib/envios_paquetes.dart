@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class MiFormulario1 extends StatefulWidget {
-  const MiFormulario1({super.key});
+class FormularioPaquetes extends StatefulWidget {
+  const FormularioPaquetes({super.key});
 
   @override
-  MiFormProductos createState() {
-    return MiFormProductos();
+  MiFormProductos2 createState() {
+    return MiFormProductos2();
   }
 }
 
-class MiFormProductos extends State<MiFormulario1> {
+class MiFormProductos2 extends State<FormularioPaquetes> {
   final _formKey = GlobalKey<FormState>();
 
   @override
@@ -21,120 +21,138 @@ class MiFormProductos extends State<MiFormulario1> {
         children: [
           TextFormField(
             decoration: const InputDecoration(
-                hintText: "Ingrese su ID",
-                labelText: "ID",
+                hintText: "Ingrese el peso del paquete",
+                labelText: "Peso",
                 prefixIcon: Icon(
-                  Icons.verified_user_outlined,
+                  Icons.monitor_weight,
                   color: Color(0xff2f1913),
                 )),
             // The validator receives the text that the user has entered.
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Por favor, escriba el ID';
+                return 'Por favor, escriba el peso';
               } else if (!RegExp(r'[0-9]+[,.]{0,1}[0-9]*').hasMatch(value)) {
-                return "Por favor introduce un ID valido";
+                return "Por favor introduce un peso valido";
               }
               return null;
             },
           ),
           TextFormField(
             decoration: const InputDecoration(
-                hintText: "Ingrese el nombre",
-                labelText: "Nombre",
+                hintText: "Ingrese el medio de transporte",
+                labelText: "Medio de transporte",
                 prefixIcon: Icon(
-                  Icons.supervised_user_circle,
+                  Icons.airplanemode_active,
                   color: Color(0xff2f1913),
                 )),
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Por favor, ingrese correctamente el nombre.';
+                return 'Por favor, ingrese correctamente su medio de transporte.';
               } else if (!RegExp(r"[a-zA-Z ]+|\s").hasMatch(value)) {
-                return "Por favor, introduce un nombre valido";
+                return "Por favor, introduce un medio de transporte valido";
               }
               return null;
             },
           ),
           TextFormField(
             decoration: const InputDecoration(
-                hintText: "Ingrese su Apellido",
-                labelText: "Apellido",
+                hintText:
+                    "Ingrese las dimensiones del paquete (3cm x 10cm x 2 cm)",
+                labelText: "Dimensiones",
                 prefixIcon: Icon(
-                  Icons.supervised_user_circle,
+                  Icons.check_box_outline_blank_rounded,
                   color: Color(0xff2f1913),
                 )),
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Por favor, ingrese el apellido';
+                return 'Por favor, ingrese las dimensiones del paquete.';
               } else if (!RegExp(r"[a-zA-Z ]+|\s").hasMatch(value)) {
-                return "Por favor, introduce un apellido valido";
+                return "Por favor, introduce unas dimensiones del paquete validas";
               }
               return null;
             },
           ),
           TextFormField(
             decoration: const InputDecoration(
-                hintText: "Ingrese el correo",
-                labelText: "Correo",
+                hintText: "Ingrese si su paquete es fragil o no es fragil",
+                labelText: "Fragil",
                 prefixIcon: Icon(
-                  Icons.email,
+                  Icons.wine_bar,
                   color: Color(0xff2f1913),
                 )),
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Por favor, ingrese correctamente el correo';
+                return 'Por favor, ingrese si su paquete es fragil o no es fragil.';
               } else if (!RegExp(r"[a-zA-Z ]+|\s").hasMatch(value)) {
-                return "Por favor, introduce un correo valido";
+                return "Por favor, introduce si su paquete es fragil o no es fragil";
               }
               return null;
             },
           ),
           TextFormField(
             decoration: const InputDecoration(
-                hintText: "Ingrese su numero de telefono",
-                labelText: "Telefono",
+                hintText: "Ingrese el precio del envio (100 + ?)",
+                labelText: "Precio de envio",
                 prefixIcon: Icon(
-                  Icons.telegram,
+                  Icons.model_training,
                   color: Color(0xff2f1913),
                 )),
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Por favor, ingrese el telefono.';
+                return 'Por favor, ingrese el precio de envio.';
               } else if (!RegExp(r'[0-9]+[,.]{0,1}[0-9]*').hasMatch(value)) {
-                return "Por favor, introduce un telefono valido";
+                return "Por favor, ingrese un precio de envio valido.";
               }
               return null;
             },
           ),
           TextFormField(
             decoration: const InputDecoration(
-                hintText: "Ingrese su direccion",
-                labelText: "Direccion",
+                hintText: "Ingrese el ID del Usuario",
+                labelText: "ID usuario",
                 prefixIcon: Icon(
-                  Icons.directions_car_filled_outlined,
+                  Icons.perm_identity,
                   color: Color(0xff2f1913),
                 )),
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Por favor, ingrese correctamente su direccion';
-              } else if (!RegExp(r"[a-zA-Z ]+|\s").hasMatch(value)) {
-                return "Por favor, introduce una direccion valida";
-              }
-              return null;
-            },
-          ),
-          TextFormField(
-            decoration: const InputDecoration(
-                hintText: "Ingrese su codigo postal",
-                labelText: "Codigo Postal;",
-                prefixIcon: Icon(
-                  Icons.house,
-                  color: Color(0xff2f1913),
-                )),
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Por favor, ingrese su codigo postal';
+                return 'Por favor, ingrese correctamente el ID usuario';
               } else if (!RegExp(r'[0-9]+[,.]{0,1}[0-9]*').hasMatch(value)) {
-                return "Por favor introduce un codigo postal valido";
+                return "Por favor, introduce un ID usuario valido";
+              }
+              return null;
+            },
+          ),
+          TextFormField(
+            decoration: const InputDecoration(
+                hintText: "Ingrese el ID del paquete",
+                labelText: "ID paquete",
+                prefixIcon: Icon(
+                  Icons.perm_identity,
+                  color: Color(0xff2f1913),
+                )),
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Por favor, ingrese correctamente el ID paquete';
+              } else if (!RegExp(r'[0-9]+[,.]{0,1}[0-9]*').hasMatch(value)) {
+                return "Por favor, introduce un ID paquete valido";
+              }
+              return null;
+            },
+          ),
+          TextFormField(
+            decoration: const InputDecoration(
+                hintText: "Ingrese el ID del transporte",
+                labelText: "ID transporte",
+                prefixIcon: Icon(
+                  Icons.perm_identity,
+                  color: Color(0xff2f1913),
+                )),
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Por favor, ingrese correctamente el ID transporte';
+              } else if (!RegExp(r'[0-9]+[,.]{0,1}[0-9]*').hasMatch(value)) {
+                return "Por favor, introduce un ID transporte valido";
               }
               return null;
             },
@@ -164,7 +182,7 @@ class MiFormProductos extends State<MiFormulario1> {
               },
               style: TextButton.styleFrom(
                   foregroundColor: const Color(0xfff2f2f2),
-                  backgroundColor: const Color(0xffc1b755)),
+                  backgroundColor: const Color(0xff045340)),
               child: const Text(
                 "Enviar",
                 style: TextStyle(fontSize: 20),

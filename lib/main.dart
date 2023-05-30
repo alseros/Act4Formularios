@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:orozco/formulario1.dart';
-import 'package:orozco/formulario2.dart';
-import 'package:orozco/formulario3.dart';
-import 'package:orozco/formulario4.dart';
+import 'package:rodriguez/registro_usuarios.dart';
+import 'package:rodriguez/envios_paquetes.dart';
+import 'package:rodriguez/registro_trabajador.dart';
+import 'package:rodriguez/tarjeta_bancaria.dart';
 
 void main() => runApp(const MiAplicacionCentral());
 
@@ -13,7 +13,7 @@ class MiAplicacionCentral extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       // Application name
-      title: 'Centraal Camionera',
+      title: 'Agencia Aduanal',
       // Application theme data, you can set the colors for the application as
       // you want
       theme: ThemeData(
@@ -21,7 +21,7 @@ class MiAplicacionCentral extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       // A widget which will be started on application startup
-      home: const MiPaginaInicial(titulo: 'Central Camionera'),
+      home: const MiPaginaInicial(titulo: 'Agencia Aduanal'),
     );
   }
 }
@@ -37,13 +37,13 @@ class MiPaginaInicial extends StatelessWidget {
         child: Scaffold(
           appBar: AppBar(
             centerTitle: true,
-            title: const Text('Central Camionera'),
-            backgroundColor: const Color(0xffe0da86),
+            title: const Text('Agencia Aduanal'),
+            backgroundColor: const Color(0xff045340),
             elevation: 8,
             bottom: TabBar(
               indicatorColor: Colors.amberAccent,
               indicator: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20), // Creates border
+                  borderRadius: BorderRadius.circular(0), // Creates border
                   color: const Color(0xffffffff)),
               tabs: [
                 Tab(
@@ -51,8 +51,7 @@ class MiPaginaInicial extends StatelessWidget {
                       'https://cdn-icons-png.flaticon.com/512/3126/3126647.png'),
                 ),
                 Tab(
-                  icon: Image.network(
-                      'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Bus-logo.svg/1024px-Bus-logo.svg.png'),
+                  icon: Image.asset('assets/caja.png'),
                 ),
                 Tab(
                   icon: Image.network(
@@ -70,53 +69,53 @@ class MiPaginaInicial extends StatelessWidget {
               ListView(
                 children: const [
                   Text(
-                    "Formulario Cliente",
+                    "Registro de Usuarios",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 24,
                     ),
                   ),
-                  MiFormulario1(),
+                  FormularioUsuarios(),
                 ],
               ),
               ListView(
                 children: const [
                   Text(
-                    "Formulario Camion",
+                    "Envios de Paquetes",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 24,
                     ),
                   ),
-                  MiFormulario2(),
+                  FormularioPaquetes(),
                 ],
               ),
               ListView(
                 children: const [
                   Text(
-                    "Formulario Empleados",
+                    "Registro del trabajador",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 24,
                     ),
                   ),
-                  MiFormulario3(),
+                  FormularioTrabajador(),
                 ],
               ),
               ListView(
                 children: const [
                   Text(
-                    "Formulario boletos",
+                    "Tarjeta bancaria",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 24,
                     ),
                   ),
-                  MiFormulario4(),
+                  FormularioTarjeta(),
                 ],
               ),
             ],
